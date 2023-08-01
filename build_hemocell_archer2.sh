@@ -12,41 +12,44 @@ module list
 export CC=cc
 export CXX=CC
 export LDFLAGS="-L${CRAYLIBS_X86_64} $(CC --cray-print-opts=libs) -lmpi"
+export MAIN= install_directory_path
 
 # To download HemoCell, comment this out if you have already done it
 git clone https://github.com/UvaCsl/HemoCell.git
+export HEMOCELL=$MAIN/HemoCell
+export DEPEND=$HEMOCELL/external
 
 # To install the palabos dependencies
-cd HemoCell/ && ./setup.sh
+cd $HEMOCELL && ./setup.sh
 
 # To install other dependencies like ParMETIS and METIS
 # Both require GKlib which we first need to downlaod
-cd ~/HemoCell/external
+cd $DEPEND
 git clone https://github.com/KarypisLab/GKlib.git # For GKlib
 git clone https://github.com/KarypisLab/METIS.git # For METIS
 git clone https://github.com/KarypisLab/ParMETIS.git # For ParMETIS
 
 # First lets build GKlib
 cd ./GKlib
-make config prefix=~/HemoCell/external/GKlib # assumming that you ane using the GNU environment and gcc ( you can change this with additional arguments - see GitHub) (the prefix= stores all the files in the specified location, the default location is ~/usr/local)
+make config prefix=$DEPEND/GKlib # assumming that you ane using the GNU environment and gcc ( you can change this with additional arguments - see GitHub) (the prefix= stores all the files in the specified location, the default location is ~/usr/local)
 make
 make install
 
 # Building METIS
-cd ~/HemoCell/external/METIS
+cd $DEPEND/METIS
 make config prefix=~/HemoCell/external/METIS gklib_path=~/HemoCell/external/GKlib
 make install
 
 # Building ParMETIS
-cd ~/HemoCell/external/ParMETIS
+cd $DEPEND/ParMETIS
 make config prefix=~/HemoCell/external/ParMETIS gklib_path=~/HemoCell/external/GKlib metis_path=~/HemoCell/external/METIS
 make install
-cd ~/HemoCell
+cd $HEMOCELL
 
 # Before building HemoCell we need to associate the paths in CMake (find_parmetis.cmake) so that HemoCell finds ParMETIS and METIS
 # The lines 21, 29, 37, 45 of the file need to be updated with the path of ParMETIS and METIS and the following code achieves that
-file="/home/e745/e745/remi23/HemoCell/cmake/find_parmetis.cmake"
-tempfile="/home/e745/e745/remi23/HemoCell/cmake/find_parmetis_temp.cmake"
+file="$HEMOCELL/cmake/find_parmetis.cmake"
+tempfile="$HEMOCELL/cmake/find_parmetis_temp.cmake"
 
 # Define the lines and their new contents
 declare -A lines_to_change
@@ -72,7 +75,7 @@ mv "$tempfile" "$file"
 echo "The specified lines in $file have been changed."
 
 # Building HemoCell
-cd ~/HemoCell
+cd $HEMOCELL
 mkdir build && cd build/
 cmake ..
-cmake --build .
+cmake --build .                                                                         
