@@ -37,12 +37,12 @@ make install
 
 # Building METIS
 cd $DEPEND/METIS
-make config prefix=~/HemoCell/external/METIS gklib_path=~/HemoCell/external/GKlib
+make config prefix=$DEPEND/METIS gklib_path=$DEPEND/GKlib
 make install
 
 # Building ParMETIS
 cd $DEPEND/ParMETIS
-make config prefix=~/HemoCell/external/ParMETIS gklib_path=~/HemoCell/external/GKlib metis_path=~/HemoCell/external/METIS
+make config prefix=$DEPEND/ParMETIS gklib_path=$DEPEND/GKlib metis_path=$DEPEND/METIS
 make install
 cd $HEMOCELL
 
