@@ -211,7 +211,7 @@ for file in files0:
 os.chdir(case1)
 
 # Parent Vessel Volume
-pv_case1 = 8*(31.5*10**(-6))**(3)
+pv_case1 = (8-(19.635409190830046-19.53601425504993))*(31.5*10**(-6))**(3)
 
 # HCT_total
 hct_pv1 = []
@@ -249,7 +249,7 @@ for file in files1:
 os.chdir(case2)
 
 # Parent Vessel Volume
-pv_case2 = 8*(31.5*10**(-6))**(3)
+pv_case2 = (8-(19.635409190830046-19.470052131408153))*(31.5*10**(-6))**(3)
 
 # HCT_total
 hct_pv2 = []
@@ -287,7 +287,7 @@ for file in files2:
 os.chdir(case3)
 
 # Parent Vessel Volume
-pv_case3 = 8*(31.5*10**(-6))**(3)
+pv_case3 = (8-(19.635409190830046-19.468457539339216))*(31.5*10**(-6))**(3)
 
 # HCT_total
 hct_pv3 = []
@@ -325,7 +325,7 @@ for file in files3:
 os.chdir(case4)
 
 # Parent Vessel Volume
-pv_case4 = 8*(31.5*10**(-6))**(3)
+pv_case4 = (8-(19.635409190830046-19.497669294100692))*(31.5*10**(-6))**(3)
 
 # HCT_total
 hct_pv4 = []
