@@ -1,0 +1,80 @@
+(HemoCell) (Config) reading checkpoint.xml
+(HemoCell) (Config) Checkpointed config, deferring the loading of the directories (out,log,checkpoint) until loadCheckpoint is called
+5268
+(PipeFlow) Starting simulation...
+(HemoCell) (SanityCheck) Performing Sanity check on simulation parameters and setup
+(HemoCell) WARNING: Force limit active at 50 pN. Results can be inaccurate due to force capping.
+Size of the multi-block:     1864-by-339-by-85
+Number of atomic-blocks:     150
+Smallest atomic-block:       47-by-48-by-85
+Largest atomic-block:        48-by-49-by-85
+Number of allocated cells:   29.514 million
+Fraction of allocated domain: 54.9495 percent
+(SanityCheck) one of the dimensions of the largest atomic block is more than 25.
+  This can be inefficient. The best performance is below 26x26x26 blocks.
+  It is recommended to adjust the number of processors or the sparseBlockStructure accordingly.
+(main) Stats. @ 1530000 (0.095625 s):
+	 # of cells: 1206 | # of RBC: 1205	 Velocity  -  max.: 0.000337642 m/s, mean: -nan m/s, rel. app. viscosity: -nan
+	 Force  -  min.: 2.92885e-05 pN, max.: 2.03281 pN (0.00011656 lf), mean: 0.0322058 pN
+Saving simple mean cell values to CSV at timestep 1530000
+(HemoCell) (Saving Functions) Saving Checkpoint at timestep 1530000
+(main) Stats. @ 1540000 (0.09625 s):
+	 # of cells: 1205 | # of RBC: 1205	 Velocity  -  max.: 0.000338403 m/s, mean: -nan m/s, rel. app. viscosity: -nan
+	 Force  -  min.: 4.26811e-05 pN, max.: 2.05477 pN (0.00011782 lf), mean: 0.0322203 pN
+Saving simple mean cell values to CSV at timestep 1540000
+(HemoCell) (Saving Functions) Saving Checkpoint at timestep 1540000
+(main) Stats. @ 1550000 (0.096875 s):
+	 # of cells: 1205 | # of RBC: 1205	 Velocity  -  max.: 0.000338775 m/s, mean: -nan m/s, rel. app. viscosity: -nan
+	 Force  -  min.: 5.71777e-05 pN, max.: 2.05565 pN (0.00011787 lf), mean: 0.0322421 pN
+Saving simple mean cell values to CSV at timestep 1550000
+(HemoCell) (Saving Functions) Saving Checkpoint at timestep 1550000
+(main) Stats. @ 1560000 (0.0975 s):
+	 # of cells: 1205 | # of RBC: 1205	 Velocity  -  max.: 0.000339617 m/s, mean: -nan m/s, rel. app. viscosity: -nan
+	 Force  -  min.: 5.35578e-05 pN, max.: 2.04357 pN (0.000117177 lf), mean: 0.0322583 pN
+Saving simple mean cell values to CSV at timestep 1560000
+(HemoCell) (Saving Functions) Saving Checkpoint at timestep 1560000
+(main) Stats. @ 1570000 (0.098125 s):
+	 # of cells: 1205 | # of RBC: 1205	 Velocity  -  max.: 0.000340346 m/s, mean: -nan m/s, rel. app. viscosity: -nan
+	 Force  -  min.: 5.05121e-05 pN, max.: 2.0908 pN (0.000119885 lf), mean: 0.0322706 pN
+Saving simple mean cell values to CSV at timestep 1570000
+(HemoCell) (Saving Functions) Saving Checkpoint at timestep 1570000
+(main) Stats. @ 1580000 (0.09875 s):
+	 # of cells: 1205 | # of RBC: 1205	 Velocity  -  max.: 0.000340832 m/s, mean: -nan m/s, rel. app. viscosity: -nan
+	 Force  -  min.: 6.96724e-05 pN, max.: 2.14277 pN (0.000122865 lf), mean: 0.032284 pN
+Saving simple mean cell values to CSV at timestep 1580000
+(HemoCell) (Saving Functions) Saving Checkpoint at timestep 1580000
+(main) Stats. @ 1590000 (0.099375 s):
+	 # of cells: 1205 | # of RBC: 1205	 Velocity  -  max.: 0.000341375 m/s, mean: -nan m/s, rel. app. viscosity: -nan
+	 Force  -  min.: 2.1278e-05 pN, max.: 2.18273 pN (0.000125156 lf), mean: 0.0322917 pN
+Saving simple mean cell values to CSV at timestep 1590000
+(HemoCell) (Saving Functions) Saving Checkpoint at timestep 1590000
+(main) Stats. @ 1600000 (0.1 s):
+	 # of cells: 1205 | # of RBC: 1205	 Velocity  -  max.: 0.000341947 m/s, mean: -nan m/s, rel. app. viscosity: -nan
+	 Force  -  min.: 5.61779e-05 pN, max.: 2.23075 pN (0.00012791 lf), mean: 0.0323031 pN
+Saving simple mean cell values to CSV at timestep 1600000
+(HemoCell) (Saving Functions) Saving Checkpoint at timestep 1600000
+(main) Stats. @ 1610000 (0.100625 s):
+	 # of cells: 1205 | # of RBC: 1205	 Velocity  -  max.: 0.000342513 m/s, mean: -nan m/s, rel. app. viscosity: -nan
+	 Force  -  min.: 8.06491e-05 pN, max.: 2.2778 pN (0.000130608 lf), mean: 0.0323151 pN
+Saving simple mean cell values to CSV at timestep 1610000
+(HemoCell) (Saving Functions) Saving Checkpoint at timestep 1610000
+(main) Stats. @ 1620000 (0.10125 s):
+	 # of cells: 1205 | # of RBC: 1205	 Velocity  -  max.: 0.000342859 m/s, mean: -nan m/s, rel. app. viscosity: -nan
+	 Force  -  min.: 3.94365e-05 pN, max.: 2.32608 pN (0.000133376 lf), mean: 0.0323264 pN
+Saving simple mean cell values to CSV at timestep 1620000
+(HemoCell) (Saving Functions) Saving Checkpoint at timestep 1620000
+(main) Stats. @ 1630000 (0.101875 s):
+	 # of cells: 1205 | # of RBC: 1205	 Velocity  -  max.: 0.000343152 m/s, mean: -nan m/s, rel. app. viscosity: -nan
+	 Force  -  min.: 7.99887e-05 pN, max.: 2.3744 pN (0.000136147 lf), mean: 0.032345 pN
+Saving simple mean cell values to CSV at timestep 1630000
+(HemoCell) (Saving Functions) Saving Checkpoint at timestep 1630000
+(main) Stats. @ 1640000 (0.1025 s):
+	 # of cells: 1205 | # of RBC: 1205	 Velocity  -  max.: 0.000346099 m/s, mean: -nan m/s, rel. app. viscosity: -nan
+	 Force  -  min.: 6.65899e-05 pN, max.: 2.4185 pN (0.000138675 lf), mean: 0.0323637 pN
+Saving simple mean cell values to CSV at timestep 1640000
+(HemoCell) (Saving Functions) Saving Checkpoint at timestep 1640000
+(main) Stats. @ 1650000 (0.103125 s):
+	 # of cells: 1205 | # of RBC: 1205	 Velocity  -  max.: 0.000343927 m/s, mean: -nan m/s, rel. app. viscosity: -nan
+	 Force  -  min.: 7.20462e-05 pN, max.: 2.4548 pN (0.000140757 lf), mean: 0.0323751 pN
+Saving simple mean cell values to CSV at timestep 1650000
+(HemoCell) (Saving Functions) Saving Checkpoint at timestep 1650000
