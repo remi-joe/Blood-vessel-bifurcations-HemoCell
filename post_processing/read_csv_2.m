@@ -1,3 +1,8 @@
+% % ---------------------------------
+% Remigius j Selvaraj, MSc Cranfield Univeristy
+% % ---------------------------------
+
+
 function [u_ratio1,u_ratio2,Ht_ratio1,Ht_ratio2,Ht_mean,Ht_std]=read_csv_2(max_iter,step_size,Diameter,Geometry,Haematocrit)
 dbstop if error
     %Child vessel diameters
