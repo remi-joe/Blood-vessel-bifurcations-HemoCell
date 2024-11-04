@@ -1,0 +1,48 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy
+import pandas as pd
+
+import os
+import sys
+
+# change to directory of the script
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
+
+folder1 = "simulation_files\ARCHER2\output_files\D31.5_0_0\output_0\csv\\"
+folder2 = "simulation_files\ARCHER2\output_files\D31.5_0_4\output_0\csv\\"
+
+data1 = pd.read_csv(folder1+'RBC.000002550000.csv')
+data2 = pd.read_csv(folder2+'RBC.000002550000.csv')
+
+x1 = np.array(data1['X'])
+x2 = np.array(data2['X'])
+
+y1 = np.array(data1['Y'])
+y2 = np.array(data2['Y'])
+
+vel1 = np.sqrt( pow(np.array(data1['velocity_x']),2) + pow(np.array(data1['velocity_y']),2) + pow(np.array(data1['velocity_z']),2) )
+vel2 = np.sqrt( pow(np.array(data2['velocity_x']),2) + pow(np.array(data2['velocity_y']),2) + pow(np.array(data2['velocity_z']),2) )
+
+vel1 = vel1[x1>200e-6]
+vel2 = vel2[x2>200e-6]
+
+# plt.hist(vel1*1000,bins=25)
+# plt.hist(vel2*1000,alpha=0.5,bins=25)
+# plt.show()
+
+y1 = y1[np.logical_and( x1>250e-6, x1<500e-6)]
+y2 = y2[np.logical_and( x2>250e-6, x2<500e-6)]
+
+# x1f = x1[np.logical_and( x1>250e-6, x1<500e-6)]
+
+# plt.hist(x1f)
+plt.hist(y1*1e6,bins=25)
+plt.hist(y2*1e6,alpha=0.5,bins=25)
+plt.show()
+
+print(np.mean(vel1),np.mean(vel2))
+print(np.std(vel1),np.std(vel2))
+print(scipy.stats.ttest_ind(vel1,vel2))
