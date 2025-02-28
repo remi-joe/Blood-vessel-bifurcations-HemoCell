@@ -17,40 +17,43 @@ sudo apt-get install -y git
 sudo apt-get install -y pip
 pip install numpy scipy matplotlib pandas h5py
 
+# The path for building HemoCell
+export MAIN=~/Desktop/learn
+
 # To download HemoCell, comment this out if you have already done it
 git clone https://github.com/UvaCsl/HemoCell.git
 
 # To install the palabos dependencies
-cd HemoCell/ && ./setup.sh
+cd $MAIN/HemoCell/ && ./setup.sh
 
 # To install other dependencies like ParMETIS and METIS
 # Both require GKlib which we first need to downlaod
-cd ~/irp/HemoCell/external
+cd $MAIN/HemoCell/external
 git clone https://github.com/KarypisLab/GKlib.git # For GKlib
 git clone https://github.com/KarypisLab/METIS.git # For METIS
 git clone https://github.com/KarypisLab/ParMETIS.git # For ParMETIS
 
 # First lets build GKlib
-cd ./GKlib
-make config prefix=~/irp/HemoCell/external/GKlib # assumming that you ane using the GNU environment and gcc ( you can change this with additional arguments - see GitHub) (the prefix= stores all the files in the specified location, the default location is ~/usr/local)
+cd $MAIN/HemoCell/external/GKlib
+make config prefix=$MAIN/HemoCell/external/GKlib # assumming that you ane using the GNU environment and gcc ( you can change this with additional arguments - see GitHub) (the prefix= stores all the files in the specified location, the default location is ~/usr/local)
 make
 make install
 
 # Building METIS
-cd ~/irp/HemoCell/external/METIS
-make config prefix=~/irp/HemoCell/external/METIS gklib_path=~/irp/HemoCell/external/GKlib
+cd $MAIN/HemoCell/external/METIS
+make config prefix=$MAIN/HemoCell/external/METIS gklib_path=$MAIN/HemoCell/external/GKlib
 make install
 
 # Building ParMETIS
-cd ~/irp/HemoCell/external/ParMETIS
-make config prefix=~/irp/HemoCell/external/ParMETIS gklib_path=~/irp/HemoCell/external/GKlib metis_path=~/irp/HemoCell/external/METIS
+cd $MAIN/HemoCell/external/ParMETIS
+make config prefix=$MAIN/HemoCell/external/ParMETIS gklib_path=$MAIN/HemoCell/external/GKlib metis_path=$MAIN/HemoCell/external/METIS
 make install
-cd ~/irp/HemoCell
+cd $MAIN/HemoCell
 
 #  Before building HemoCell we need to associate the paths in CMake (find_parmetis.cmake) so that HemoCell finds ParMETIS and METIS
 # The lines 21, 29, 37, 45 of the file need to be updated with the path of ParMETIS and METIS and the following section of the code achieves that
-file="/home/remi/irp/HemoCell/cmake/find_parmetis.cmake"
-tempfile="/home/remi/irp/HemoCell/cmake/find_parmetis_temp.cmake"
+file="$MAIN/HemoCell/cmake/find_parmetis.cmake"
+tempfile="$MAIN/HemoCell/cmake/find_parmetis_temp.cmake"
 
 # Define the lines and their new contents
 declare -A lines_to_change
@@ -76,7 +79,7 @@ mv "$tempfile" "$file"
 echo "The specified lines in $file have been changed."
 
 # Building HemoCell
-cd ~/irp/HemoCell
+cd $MAIN/HemoCell
 mkdir build && cd build/
 cmake ..
 cmake --build .
