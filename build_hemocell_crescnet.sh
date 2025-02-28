@@ -1,3 +1,7 @@
+#---------------- Written by ------------
+#------------- Remigius J Selvaraj ----------
+#--------- Computational Fluid Dynamics ----------
+#------------- Cranfield University ---------
 #!/bin/bash
 
 module load CMake/3.15.3-GCCcore-8.3.0
