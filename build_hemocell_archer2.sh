@@ -1,3 +1,7 @@
+#---------------- Written by ------------
+#------------- Remigius J Selvaraj ----------
+#--------- Computational Fluid Dynamics ----------
+#------------- Cranfield University ---------
 #!/bin/bash
 if [[ "$0" == "$BASH_SOURCE" ]]; then
  echo "Script is a subshell, this wont work, source it instead!"
