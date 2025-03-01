@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<Checkpoint>
+    <hemocell>
+        <domain>
+            <Re> 0.005 </Re>
+            <RepCutoff> 0.7 </RepCutoff>
+            <blockSize> -1 </blockSize>
+            <dt> 6.25e-08 </dt>
+            <dx> 5e-07 </dx>
+            <fluidEnvelope> 2 </fluidEnvelope>
+            <geometry> mesh_0.93_0.58.stl </geometry>
+            <kBT> 4.100531391e-21 </kBT>
+            <kRep> 2e-22 </kRep>
+            <nuP> 1.798165137614679e-06 </nuP>
+            <particleEnvelope> 25 </particleEnvelope>
+            <refDir> 1 </refDir>
+            <refDirN> 264 </refDirN>
+            <rhoP> 1090 </rhoP>
+        </domain>
+        <ibm>
+            <stepMaterialEvery> 50 </stepMaterialEvery>
+            <stepParticleEvery> 50 </stepParticleEvery>
+        </ibm>
+        <parameters>
+            <checkpointDirectory> checkpoint </checkpointDirectory>
+            <logDirectory> log </logDirectory>
+            <logFile> logfile </logFile>
+            <outputDirectory> output </outputDirectory>
+            <warmup> 7700 </warmup>
+        </parameters>
+        <sim>
+            <tcheckpoint> 10000 </tcheckpoint>
+            <tcsv> 10000 </tcsv>
+            <tmax> 5610000 </tmax>
+            <tmeas> 10000 </tmeas>
+        </sim>
+        <verbose>
+            <cellsDeletedInfo> 0 </cellsDeletedInfo>
+        </verbose>
+    </hemocell>
+    <General>
+        <Iteration> 5600000 </Iteration>
+        <OutDirectory> ./output_0/ </OutDirectory>
+    </General>
+</Checkpoint>
